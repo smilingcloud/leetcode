@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-    vector<int> nums = {-3, 4, 3, 90};
+    vector<int> nums = {-3, 4, 3, 90， 91};
     int target = 0;
 
     Solution sol;
