@@ -1,4 +1,12 @@
 cmake_minimum_required(VERSION 2.8)
 
 project(Add_Two_Numbers)
-add_executable(${PROJECT_NAME} "main.cpp")
+
+FILE(GLOB_RECURSE LibFiles "*.h")
+add_custom_target(headers SOURCES ${LibFiles})
+
+aux_source_directory(. DIR_SRCS)
+
+SET(ENV_PATH ${DIR_SRCS})
+
+ADD_EXECUTABLE(${PROJECT_NAME} ${ENV_PATH})
