@@ -15,7 +15,7 @@ ListNode *Solution::addTwoNumbers(ListNode *l1, ListNode *l2)
     {
         sum = l1->val + l2->val + b;
         a = sum % 10;
-        ptr->next = new ListNode(a + b);
+        ptr->next = new ListNode(a);
         ptr = ptr->next;
         b = sum / 10;
     }
@@ -23,7 +23,7 @@ ListNode *Solution::addTwoNumbers(ListNode *l1, ListNode *l2)
     {
         sum = l1->val + b;
         a = sum % 10;
-        ptr->next = new ListNode(a + b);
+        ptr->next = new ListNode(a);
         ptr = ptr->next;
         b = sum / 10;
     }
@@ -31,7 +31,7 @@ ListNode *Solution::addTwoNumbers(ListNode *l1, ListNode *l2)
     {
         sum  = l2->val +b;
         a= sum % 10;
-        ptr->next = new ListNode(a + b);
+        ptr->next = new ListNode(a);
         ptr = ptr->next;
         b = sum / 10;
     }
@@ -41,7 +41,26 @@ ListNode *Solution::addTwoNumbers(ListNode *l1, ListNode *l2)
         ptr = ptr->next;
     }
 
+
     ptr = dummyRoot->next;
     delete dummyRoot;
+    ptr = reverseLink(ptr);
     return ptr;
+}
+
+//to reverse single linked list
+ListNode *Solution::reverseLink(ListNode *l)
+{
+    ListNode* prev = NULL;
+    ListNode* next;
+    while(l != NULL)
+    {
+
+        next = l->next;
+        l->next = prev;
+        prev = l;
+        l = next;
+
+    }
+    return prev;
 }

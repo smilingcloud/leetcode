@@ -69,6 +69,10 @@ int main() {
         getline(cin, line);
         ListNode* l2 = stringToListNode(line);
 
+//        ListNode* rev = Solution().reverseLink(l1);
+
+//        string out = listNodeToString(rev);
+
         ListNode* ret = Solution().addTwoNumbers(l1, l2);
 
         string out = listNodeToString(ret);

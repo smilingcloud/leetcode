@@ -13,6 +13,7 @@ class Solution
 public:
     Solution();
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2);
+    ListNode* reverseLink(ListNode* l);
 };
 
 #endif // SOLUTION_H
